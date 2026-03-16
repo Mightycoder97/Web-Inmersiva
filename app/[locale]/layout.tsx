@@ -8,6 +8,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import StickyDateWidget from "@/components/layout/StickyDateWidget";
+import AntiInspect from "@/components/shared/AntiInspect";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -70,6 +71,7 @@ export default async function RootLayout({
         suppressHydrationWarning
       >
         <NextIntlClientProvider messages={messages} locale={locale}>
+        <AntiInspect />
         <Header />
         <main>{children}</main>
         <Footer />
