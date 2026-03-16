@@ -168,7 +168,7 @@ export default function HeroSection() {
             {/* Poster 1 */}
             <div
               ref={addToPostersRef}
-              className="relative w-[65%] md:w-[26%] aspect-[2.5/3.5] bg-[#111] overflow-hidden group shadow-[0_20px_50px_rgba(0,0,0,0.8)]"
+              className="hidden md:block relative w-[65%] md:w-[26%] aspect-[2.5/3.5] bg-[#111] overflow-hidden group shadow-[0_20px_50px_rgba(0,0,0,0.8)]"
               style={{ transformStyle: "preserve-3d" }}
             >
               <Image src="https://images.unsplash.com/photo-1571266028243-e4733b0f0bb0?w=800&q=80" alt="DJ Event" fill className="object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700 grayscale group-hover:grayscale-0" />
@@ -210,7 +210,7 @@ export default function HeroSection() {
             {/* Poster 3 */}
             <div
               ref={addToPostersRef}
-              className="relative w-[65%] md:w-[26%] aspect-[2.5/3.5] bg-[#111] overflow-hidden group shadow-[0_20px_50px_rgba(0,0,0,0.8)]"
+              className="hidden md:block relative w-[65%] md:w-[26%] aspect-[2.5/3.5] bg-[#111] overflow-hidden group shadow-[0_20px_50px_rgba(0,0,0,0.8)]"
               style={{ transformStyle: "preserve-3d" }}
             >
               <Image src="https://images.unsplash.com/photo-1506157786151-b8491531f063?w=800&q=80" alt="Live Band" fill className="object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700 grayscale group-hover:grayscale-0" />
