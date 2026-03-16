@@ -1,22 +1,27 @@
+"use client";
+
 import Link from "next/link";
-
-const footerLinks = [
-  { href: "/eventos", label: "Eventos" },
-  { href: "/menu", label: "Carta" },
-  { href: "/galeria", label: "Galería" },
-  { href: "/nosotros", label: "Nosotros" },
-  { href: "/contacto", label: "Contacto" },
-  { href: "/reservas", label: "Reservas" },
-];
-
-const socialLinks = [
-  { href: "https://instagram.com", label: "Instagram", icon: "IG" },
-  { href: "https://facebook.com", label: "Facebook", icon: "FB" },
-  { href: "https://tiktok.com", label: "TikTok", icon: "TK" },
-  { href: "https://wa.me/51999999999", label: "WhatsApp", icon: "WA" },
-];
+import { useTranslations } from "next-intl";
 
 export default function Footer() {
+  const t = useTranslations();
+
+  const footerLinks = [
+    { href: "/eventos", label: t("Navigation.events") },
+    { href: "/menu", label: t("Navigation.menu") },
+    { href: "/galeria", label: t("Navigation.gallery") },
+    { href: "/nosotros", label: t("Navigation.about") },
+    { href: "/contacto", label: t("Navigation.contact") },
+    { href: "/reservas", label: t("Navigation.reserve") },
+  ];
+
+  const socialLinks = [
+    { href: "https://instagram.com", label: "Instagram", icon: "IG" },
+    { href: "https://facebook.com", label: "Facebook", icon: "FB" },
+    { href: "https://tiktok.com", label: "TikTok", icon: "TK" },
+    { href: "https://wa.me/51999999999", label: "WhatsApp", icon: "WA" },
+  ];
+
   return (
     <footer className="relative bg-[var(--color-bg-secondary)] border-t border-[var(--glass-border)]">
       {/* Top accent line */}
@@ -27,18 +32,17 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <h3 className="font-display text-2xl font-bold uppercase tracking-wider text-gradient mb-4">
-              Restaurante
+              {t("Footer.brandName")}
             </h3>
             <p className="text-[var(--color-text-secondary)] text-sm leading-relaxed max-w-xs">
-              Una experiencia gastronómica única donde la mejor cocina se fusiona
-              con los mejores ritmos musicales de Lima.
+              {t("Footer.brandDescription")}
             </p>
           </div>
 
           {/* Links */}
           <div>
             <h4 className="text-xs uppercase tracking-widest text-[var(--color-text-muted)] mb-6">
-              Navegación
+              {t("Footer.navTitle")}
             </h4>
             <ul className="space-y-3">
               {footerLinks.map((link) => (
@@ -57,7 +61,7 @@ export default function Footer() {
           {/* Contact & Social */}
           <div>
             <h4 className="text-xs uppercase tracking-widest text-[var(--color-text-muted)] mb-6">
-              Contacto
+              {t("Footer.contactTitle")}
             </h4>
             <div className="space-y-3 text-sm text-[var(--color-text-secondary)]">
               <p>Av. La Mar 1234, Miraflores</p>
@@ -86,12 +90,12 @@ export default function Footer() {
         {/* Horarios */}
         <div className="mt-12 pt-8 border-t border-[var(--glass-border)] flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex flex-wrap gap-6 text-xs text-[var(--color-text-muted)] uppercase tracking-wider">
-            <span>Lun – Jue: 12:00 – 23:00</span>
-            <span>Vie – Sáb: 12:00 – 02:00</span>
-            <span>Dom: 12:00 – 22:00</span>
+            <span>{t("Footer.monThu")}</span>
+            <span>{t("Footer.friSat")}</span>
+            <span>{t("Footer.sun")}</span>
           </div>
-          <p className="text-xs text-[var(--color-text-muted)]">
-            © {new Date().getFullYear()} Restaurante. Todos los derechos reservados.
+          <p className="text-xs text-[var(--color-text-muted)]" suppressHydrationWarning>
+            © {new Date().getFullYear()} {t("Footer.copyright")}
           </p>
         </div>
       </div>

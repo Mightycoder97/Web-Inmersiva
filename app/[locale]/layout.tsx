@@ -67,6 +67,7 @@ export default async function RootLayout({
     <html lang={locale}>
       <body
         className={`${spaceGrotesk.variable} ${inter.variable} antialiased`}
+        suppressHydrationWarning
       >
         <NextIntlClientProvider messages={messages} locale={locale}>
         <Header />

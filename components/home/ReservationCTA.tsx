@@ -2,9 +2,11 @@
 
 import { useRef, useEffect } from "react";
 import { gsap } from "@/lib/animations/gsap-config";
+import { useTranslations } from "next-intl";
 import Button from "@/components/ui/Button";
 
 export default function ReservationCTA() {
+  const t = useTranslations();
   const sectionRef = useRef<HTMLElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 
@@ -55,27 +57,25 @@ export default function ReservationCTA() {
       <div className="container-custom relative z-10">
         <div ref={contentRef} className="text-center max-w-3xl mx-auto">
           <span className="text-[var(--color-accent)] text-xs uppercase tracking-[0.3em] font-semibold mb-4 block">
-            Reservaciones
+            {t("Reservation.label")}
           </span>
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tight mb-6">
-            Vive la{" "}
-            <span className="text-gradient">Experiencia</span>
+            {t("Reservation.title1")}{" "}
+            <span className="text-gradient">{t("Reservation.title2")}</span>
           </h2>
           <p className="text-lg text-[var(--color-text-secondary)] mb-10 leading-relaxed">
-            Asegura tu lugar en nuestras noches exclusivas. La mejor cocina,
-            los mejores ritmos y una atmósfera que no encontrarás en ningún
-            otro lugar de Lima.
+            {t("Reservation.description")}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button variant="primary" size="lg" href="/reservas">
-              Reservar Mesa
+              {t("Reservation.bookTable")}
             </Button>
             <Button
               variant="ghost"
               size="lg"
               href="https://wa.me/51999999999"
             >
-              💬 WhatsApp Directo
+              {t("Reservation.whatsapp")}
             </Button>
           </div>
         </div>

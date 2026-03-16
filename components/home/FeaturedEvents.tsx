@@ -3,11 +3,13 @@
 import { useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { gsap, ScrollTrigger } from "@/lib/animations/gsap-config";
 import SectionTitle from "@/components/ui/SectionTitle";
 import { mockEvents } from "@/lib/mock-data";
 
 export default function FeaturedEvents() {
+  const t = useTranslations();
   const sectionRef = useRef<HTMLElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
 
@@ -62,8 +64,8 @@ export default function FeaturedEvents() {
 
       <div className="container-custom relative z-10">
         <SectionTitle
-          title="Próximos Eventos"
-          subtitle="Noches únicas donde la música y la gastronomía se encuentran"
+          title={t("Events.title")}
+          subtitle={t("Events.subtitle")}
         />
 
         <div
@@ -139,7 +141,7 @@ export default function FeaturedEvents() {
             href="/eventos"
             className="inline-flex items-center gap-2 text-sm uppercase tracking-widest text-[var(--color-accent)] hover:text-[var(--color-accent-light)] transition-colors duration-300 group"
           >
-            Ver Todos los Eventos
+            {t("Events.viewAll")}
             <svg
               width="16"
               height="16"

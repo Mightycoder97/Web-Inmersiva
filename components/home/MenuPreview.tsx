@@ -3,11 +3,13 @@
 import { useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { gsap, ScrollTrigger } from "@/lib/animations/gsap-config";
 import SectionTitle from "@/components/ui/SectionTitle";
 import { menuCategories } from "@/lib/mock-data";
 
 export default function MenuPreview() {
+  const t = useTranslations();
   const sectionRef = useRef<HTMLElement>(null);
   const itemsRef = useRef<HTMLDivElement>(null);
 
@@ -48,8 +50,8 @@ export default function MenuPreview() {
 
       <div className="container-custom relative z-10">
         <SectionTitle
-          title="Nuestra Carta"
-          subtitle="Cocina de autor con alma peruana, inspirada en las raíces y elevada con técnica contemporánea"
+          title={t("Menu.title")}
+          subtitle={t("Menu.subtitle")}
         />
 
         <div ref={itemsRef} className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
@@ -62,7 +64,7 @@ export default function MenuPreview() {
               <div className="relative w-24 h-24 md:w-32 md:h-32 flex-shrink-0 rounded-[var(--radius-md)] overflow-hidden">
                 <Image
                   src={item.foto}
-                  alt={item.nombre}
+                  alt={t(`MenuData.${item.id}_name`)}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                   sizes="128px"
@@ -72,10 +74,10 @@ export default function MenuPreview() {
               {/* Info */}
               <div className="flex flex-col justify-center flex-1 min-w-0">
                 <h3 className="font-display text-lg font-bold uppercase tracking-tight group-hover:text-[var(--color-accent)] transition-colors duration-300">
-                  {item.nombre}
+                  {t(`MenuData.${item.id}_name`)}
                 </h3>
                 <p className="text-sm text-[var(--color-text-secondary)] mt-1 line-clamp-2">
-                  {item.descripcion}
+                  {t(`MenuData.${item.id}_desc`)}
                 </p>
                 <p className="mt-3 font-display text-xl font-bold text-[var(--color-accent)]">
                   S/. {item.precio}
@@ -91,7 +93,7 @@ export default function MenuPreview() {
             href="/menu"
             className="inline-flex items-center gap-2 text-sm uppercase tracking-widest text-[var(--color-accent)] hover:text-[var(--color-accent-light)] transition-colors duration-300 group"
           >
-            Ver Carta Completa
+            {t("Menu.viewAll")}
             <svg
               width="16"
               height="16"
