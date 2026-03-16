@@ -1,0 +1,31 @@
+{
+  "Navigation": {
+    "home": "Inicio",
+    "events": "Eventos",
+    "menu": "Carta",
+    "gallery": "Galería",
+    "about": "Nosotros",
+    "contact": "Contacto",
+    "reserve": "Reservar"
+  },
+  "Hero": {
+    "city": "Miraflores, Lima",
+    "welcome": "WELCOME TO",
+    "brand": "LA BOHEMIA",
+    "subtitle": "Transmisión desde otra dimensión",
+    "reserveBtn": "Reserva Tu Mesa"
+  },
+  "Posters": {
+    "guestDj": "Guest DJ",
+    "djName": "Tale of Us",
+    "specialEvent": "Special Event",
+    "eventName": "Black Coffee",
+    "liveBand": "Live Band",
+    "bandName": "Symphony"
+  },
+  "Dates": {
+    "selectDate": "Seleccionar Fecha",
+    "viewCalendar": "Ver Calendario Completo",
+    "fechas": "Fechas"
+  }
+}
